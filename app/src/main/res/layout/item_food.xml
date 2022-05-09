@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/itemOne"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu" />
+
+                <TextView
+                    android:id="@+id/tvHarga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu" />
+
+                <ImageView
+                    android:id="@+id/imgRating"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu2" />
+
+                <TextView
+                    android:id="@+id/tvHarga2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu2" />
+
+                <ImageView
+                    android:id="@+id/imgRating2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga2"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu3"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu3" />
+
+                <TextView
+                    android:id="@+id/tvHarga3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu3" />
+
+                <ImageView
+                    android:id="@+id/imgRating3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga3"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu4"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu4" />
+
+                <TextView
+                    android:id="@+id/tvHarga4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu4" />
+
+                <ImageView
+                    android:id="@+id/imgRating4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga4"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu5"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu5" />
+
+                <TextView
+                    android:id="@+id/tvHarga5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu5" />
+
+                <ImageView
+                    android:id="@+id/imgRating5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga5"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu6"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu6" />
+
+                <TextView
+                    android:id="@+id/tvHarga6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu6" />
+
+                <ImageView
+                    android:id="@+id/imgRating6"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga6"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu7"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu7" />
+
+                <TextView
+                    android:id="@+id/tvHarga7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu7" />
+
+                <ImageView
+                    android:id="@+id/imgRating7"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga7"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating7"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu8"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/mie_card"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toTopOf="@id/tvMenu8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvMenu8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/mie_ayam_original"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvHarga8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgMenu8" />
+
+                <TextView
+                    android:id="@+id/tvHarga8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/rp_10_000"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/main"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@+id/imgRating8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenu8" />
+
+                <ImageView
+                    android:id="@+id/imgRating8"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_rating"
+                    android:contentDescription="@string/imageview"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRating8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHarga8"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRating8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:text="@string/value_rating"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgRating8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imgRating8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

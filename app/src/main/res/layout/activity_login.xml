@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".view.ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/imageview"
+        android:src="@drawable/logo"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvMamieRus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selamat_datang"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        android:textColor="@color/grey_100"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        />
+
+    <TextView
+        android:id="@+id/tvNamaPengguna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nama_pengguna"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/grey_100"
+        app:layout_constraintTop_toBottomOf="@id/tvMamieRus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/edtNamaPengguna"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/customize_input"
+        android:hint="@string/masukkan_nama_pengguna"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNamaPengguna"
+        android:autofillHints=""
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tvKataSandi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kata_sandi"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="16sp"
+        android:textColor="@color/grey_100"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNamaPengguna"
+        />
+
+    <EditText
+        android:id="@+id/edtKataSandi"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/customize_input"
+        android:hint="@string/masukkan_kata_sandi"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKataSandi"
+        android:autofillHints=""
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/btnLewati"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:text="@string/lupa_kata_sandi"
+        android:fontFamily="@font/poppins_bold"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/main"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtKataSandi" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/masuk"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLewati"
+        />
+
+    <TextView
+        android:id="@+id/tvBelumPunyaAkun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/belum_mempunyai_akun"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDaftar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <Button
+        android:id="@+id/btnDaftar"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:text="@string/daftar"
+        android:textSize="11sp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBelumPunyaAkun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBelumPunyaAkun"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

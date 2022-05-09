@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mamie Rus Theme -->
+    <color name="main">#F66969</color>
+    <color name="secondary">#344CB7</color>
+    <color name="green">#54CC61</color>
+    <color name="blue">#50A2ED</color>
+    <color name="black">#414141</color>
+    <color name="grey">#ECECEC</color>
+    <color name="grey_80">#CCECECEC</color>
+    <color name="grey_100">#565656</color>
+    <color name="white_100">#F9F7F7</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

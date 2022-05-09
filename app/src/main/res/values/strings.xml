@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Mamie Rus</string>
+
+    <!-- App Bar -->
+    <string name="dashboard">Daftar Menu Mie Ayam</string>
+    <string name="tambah_menu">Tambah Menu</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="profil">Profil</string>
+    <string name="detail_menu">Detail Menu</string>
+    <string name="alamat_warung">Alamat Warung</string>
+    <string name="komentar_pembeli">Komentar Pembeli</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+
+    <!--  Name Of My Dev Team  -->
+    <string name="arief_yusuf_winata">Arief Yusuf Winata</string>
+    <string name="wanda_aprianingrum">Wanda Aprianingrum</string>
+    <string name="ma_isy_yazid_i">Ma\'isy Yazid I</string>
+
+    <!--  Role  -->
+    <string name="ui_ux">UI/UX Design</string>
+    <string name="front_end">Front End Dev</string>
+    <string name="back_end">Back End Dev</string>
+
+    <!--  Button  -->
+    <string name="maps">Lihat Maps</string>
+    <string name="whatsapp">Pesan Melalui WhatsApp</string>
+    <string name="simpan">Simpan</string>
+    <string name="lewati">Lewati</string>
+    <string name="masuk">Masuk</string>
+    <string name="edit">Edit</string>
+    <string name="daftar">Daftar</string>
+    <string name="hapus">Hapus</string>
+    <string name="tambah">Tambah</string>
+
+    <!--  Hint  -->
+
+    <!--  Section  -->
+    <string name="kami_menyediakan">Kami Menyediakan Mie Ayam \n Selera Keluarga Anda</string>
+    <string name="desc_about">Mamie Rus merupakan aplikasi berbasis android yang bertujuan untuk men-digitalisasikan menu di Warung Mie Ayam Pak Rusyono. Dan memudahkan pembeli dalam pembelian mie ayam di Warung Pak Rusyono.\n\nDengan adanya Mamie Rus ini, kami berharap penjualan mie ayam Pak Rusyono dapat meningkat dan pembeli dapat dengan mudah untuk melakukan pembelian mie ayam di Warung Pak Rusyono. </string>
+    <string name="desc_detail">Mie Ayam dengan cita rasa bawang dan ayam suwir tanpa tulang. Sangat cocok untuk disajikan dengan es teh manis.</string>
+    <string name="mamie_rus">Mamie Rus</string>
+    <string name="splash_version">Version 1.0 \n Made By ❤️</string>
+    <string name="imageview">ImageView</string>
+    <string name="masukkan_nama_pengguna">Masukkan Nama Pengguna</string>
+    <string name="selamat_datang">Selamat Datang Di \n Mami Rus</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="belum_mempunyai_akun">Belum mempunyai akun?</string>
+    <string name="deskripsi_alamat_warung">Warung Mie Ayam Pak Rusyono adalah usaha mie ayam yang sudah berdiri sejak tahun 2020. Letaknya ada di Jl. Masjid Agung No.40B, RT.03/RW.04, Banjar, Kec. Banjar, Kota Banjar, Jawa Barat. </string>
+    <string name="jam_buka_tutup">Tutup • Buka Hari Ini Jam 9.30 WIB</string>
+    <string name="send">SEND</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="masukkan_kata_sandi">Masukkan Kata Sandi</string>
+    <string name="yuk_daftar_akun">Yuk, Daftar Akun</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="masukkan_nomor_hp">Masukkan Nomor HP</string>
+    <string name="sudah_mempunyai_akun">Sudah mempunyai akun?</string>
+    <string name="cari">Cari makanan</string>
+    <string name="mie_ayam_original">Mie Ayam Original</string>
+    <string name="rp_10_000">Rp. 10.000</string>
+    <string name="value_rating">4.0</string>
+    <string name="ubah">Ubah</string>
+    <string name="ingin_masuk">Ingin Masuk?</string>
+    <string name="title_activity_main_p">MainActivityP</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>
