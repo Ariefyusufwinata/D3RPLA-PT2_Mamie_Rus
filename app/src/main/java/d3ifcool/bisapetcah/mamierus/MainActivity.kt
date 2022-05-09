@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.itemFood.itemOne.setOnClickListener{
+        binding.rvItem.itemOne.setOnClickListener{
             Intent(this, DetailMenuActivity::class.java).also {
                 startActivity(it)
             }
