@@ -1,28 +1,39 @@
 package d3ifcool.bisapetcah.mamierus.core.connection
 
-import d3ifcool.bisapetcah.mamierus.core.model.LoginResponses
-import d3ifcool.bisapetcah.mamierus.core.model.RegisterKonsumenResponses
-import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
-interface Client {
+object Client {
+    private const val BASE_URL = "https://mamierus.makachi.id/api/v1/"
 
-    @FormUrlEncoded
-    @POST("register")
-    fun register(
-        @Field("name") name : String,
-        @Field("username") username : String,
-        @Field("password") password : String,
-        @Field("phone") phone : String,
-        @Field("address") address : String,
-    ) : Call<RegisterKonsumenResponses>
+    private val interceptor = HttpLoggingInterceptor()
+        .setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    @FormUrlEncoded
-    @POST("login")
-    fun login(
-        @Field("username") username : String,
-        @Field("password") passsword : String,
-    )  : Call<LoginResponses>
+    private val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor(interceptor)
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .build()
+
+//    private val client = Retrofit.Builder()
+//        .client(okHttpClient)
+//        .baseUrl(BASE_URL)
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
+//
+//    val api = client.create(Client::class.java)
+
+    val instance : Api by lazy {
+        val retrofit = Retrofit.Builder()
+            .client(OkHttpClient())
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retrofit.create(Api::class.java)
+    }
 }

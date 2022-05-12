@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus.view.ui.konsumen
+package d3ifcool.bisapetcah.mamierus.ui.konsumen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

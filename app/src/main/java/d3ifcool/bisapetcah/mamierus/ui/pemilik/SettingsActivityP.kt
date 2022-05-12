@@ -2,15 +2,15 @@ package d3ifcool.bisapetcah.mamierus.ui.pemilik
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityPemilikMainBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPemilikSettingsBinding
 
-class MainActivityP : AppCompatActivity() {
-    private lateinit var binding: ActivityPemilikMainBinding
+class SettingsActivityP : AppCompatActivity() {
+
+    private lateinit var binding : ActivityPemilikSettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPemilikMainBinding.inflate(layoutInflater)
+        binding = ActivityPemilikSettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 }

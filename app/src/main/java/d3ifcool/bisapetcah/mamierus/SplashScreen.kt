@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus.view
+package d3ifcool.bisapetcah.mamierus
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.util.Log
 import d3ifcool.bisapetcah.mamierus.core.DELAYTIME
 import d3ifcool.bisapetcah.mamierus.core.SPLASHSCREEN
 import d3ifcool.bisapetcah.mamierus.databinding.ActivitySplashScreenBinding
-import d3ifcool.bisapetcah.mamierus.view.ui.PortalScreenActivity
+import d3ifcool.bisapetcah.mamierus.ui.PortalScreenActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {

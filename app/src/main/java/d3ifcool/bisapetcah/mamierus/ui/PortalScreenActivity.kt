@@ -1,11 +1,10 @@
-package d3ifcool.bisapetcah.mamierus.view.ui
+package d3ifcool.bisapetcah.mamierus.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import d3ifcool.bisapetcah.mamierus.databinding.ActivityPortalScreenBinding
-import d3ifcool.bisapetcah.mamierus.view.MainActivity
+import d3ifcool.bisapetcah.mamierus.MainActivity
 
 class PortalScreenActivity : AppCompatActivity() {
 

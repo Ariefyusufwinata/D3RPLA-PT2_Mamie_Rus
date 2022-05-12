@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    tools:context=".view.SplashScreen">
+    tools:context=".SplashScreen">
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:indeterminateTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

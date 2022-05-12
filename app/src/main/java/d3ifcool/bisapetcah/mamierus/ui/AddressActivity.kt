@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus.view.ui
+package d3ifcool.bisapetcah.mamierus.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

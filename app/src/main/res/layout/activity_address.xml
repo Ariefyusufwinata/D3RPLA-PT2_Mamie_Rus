@@ -1,102 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ui.AddressActivity"
-    >
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.AddressActivity">
 
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/warung"
-                android:scaleType="fitXY"
-                />
-        </FrameLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imgWarung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/icon_clock"
-                    android:scaleType="fitXY"
-                    />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvJamBukaTutup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:justificationMode="inter_word"
-                    android:text="@string/jam_buka_tutup"
-                    android:fontFamily="@font/poppins_medium"
-                    />
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatCheckedTextView
-                android:id="@+id/tvMamieRus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/mamie_rus"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvDeskripsiAlamat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/deskripsi_alamat_warung"
-                />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnMaps"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
-            android:text="@string/btn_maps"
-            app:cornerRadius="10dp"
-            android:backgroundTint="@color/blue"
+            android:src="@drawable/warung"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/imageview"
             />
 
-    </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        <ImageView
+            android:id="@+id/ic_clock"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="@string/imageview"
+            android:src="@drawable/icon_clock"
+            app:layout_constraintEnd_toStartOf="@id/tvJamBukaTutup"
+            app:layout_constraintBottom_toBottomOf="@+id/tvJamBukaTutup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvJamBukaTutup" />
+
+        <TextView
+            android:id="@+id/tvJamBukaTutup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/jam_buka_tutup"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/ic_clock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWarung" />
+
+        <TextView
+            android:id="@+id/tvMamieRus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/mamie_rus"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvJamBukaTutup" />
+
+        <TextView
+            android:id="@+id/tvDeskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/deskripsi_alamat_warung"
+            android:fontFamily="@font/poppins"
+            android:justificationMode="inter_word"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMamieRus" />
+
+        <Button
+            android:id="@+id/btnGmaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/maps"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDeskripsi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,13 @@
 
     <!-- App Bar -->
     <string name="dashboard">Daftar Menu Mie Ayam</string>
-    <string name="tambah_menu">Tambah Menu</string>
-    <string name="pengaturan">Pengaturan</string>
-    <string name="profil">Profil</string>
+    <string name="add_menu">Tambah Menu</string>
+    <string name="settings">Pengaturan</string>
+    <string name="profile">Profil</string>
     <string name="detail_menu">Detail Menu</string>
-    <string name="alamat_warung">Alamat Warung</string>
-    <string name="komentar_pembeli">Komentar Pembeli</string>
-    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="address">Alamat Warung</string>
+    <string name="comment">Komentar Pembeli</string>
+    <string name="about_app">Tentang Aplikasi</string>
 
     <!--  Name Of My Dev Team  -->
     <string name="arief_yusuf_winata">Arief Yusuf Winata</string>
@@ -42,7 +42,7 @@
     <string name="splash_version">Version 1.0 \n Made By ❤️</string>
     <string name="imageview">ImageView</string>
     <string name="masukkan_nama_pengguna">Masukkan Nama Pengguna</string>
-    <string name="selamat_datang">Selamat Datang Di \n Mami Rus</string>
+    <string name="selamat_datang">Selamat Datang Di \n Mamie Rus</string>
     <string name="nama_pengguna">Nama Pengguna</string>
     <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
     <string name="belum_mempunyai_akun">Belum mempunyai akun?</string>

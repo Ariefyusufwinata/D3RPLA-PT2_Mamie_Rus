@@ -2,15 +2,15 @@ package d3ifcool.bisapetcah.mamierus.ui.pemilik
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityPemilikMainBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPemilikAddMenuBinding
 
-class MainActivityP : AppCompatActivity() {
-    private lateinit var binding: ActivityPemilikMainBinding
+class AddMenuActivityP : AppCompatActivity() {
+
+    private lateinit var binding : ActivityPemilikAddMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPemilikMainBinding.inflate(layoutInflater)
+        binding = ActivityPemilikAddMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 }
