@@ -29,7 +29,7 @@ object Client {
 
     val instance : Api by lazy {
         val retrofit = Retrofit.Builder()
-            .client(OkHttpClient())
+            .client(okHttpClient)
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

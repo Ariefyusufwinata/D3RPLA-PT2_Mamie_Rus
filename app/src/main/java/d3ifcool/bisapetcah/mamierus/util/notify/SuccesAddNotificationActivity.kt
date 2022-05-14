@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus.util
+package d3ifcool.bisapetcah.mamierus.util.notify
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

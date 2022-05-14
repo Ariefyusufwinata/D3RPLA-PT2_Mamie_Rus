@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus
+package d3ifcool.bisapetcah.mamierus.ui.pemilik
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

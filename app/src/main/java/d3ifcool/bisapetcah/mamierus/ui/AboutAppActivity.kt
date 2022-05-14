@@ -20,10 +20,12 @@ class AboutAppActivity : AppCompatActivity() {
         val title = resources.getString(R.string.about_app)
         val actionBar = supportActionBar
         actionBar?.title = title
+        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    override fun onNavigateUp(): Boolean {
-        return super.onNavigateUp()
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

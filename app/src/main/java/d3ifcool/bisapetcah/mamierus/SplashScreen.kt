@@ -1,10 +1,13 @@
 package d3ifcool.bisapetcah.mamierus
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import d3ifcool.bisapetcah.mamierus.core.DELAYTIME
 import d3ifcool.bisapetcah.mamierus.core.SPLASHSCREEN
 import d3ifcool.bisapetcah.mamierus.databinding.ActivitySplashScreenBinding
@@ -32,4 +35,5 @@ class SplashScreen : AppCompatActivity() {
             }
         }.start()
     }
+
 }
