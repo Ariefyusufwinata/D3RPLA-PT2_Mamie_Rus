@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
@@ -11,9 +13,31 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/Theme.MamieRus">
         <activity
-            android:name=".AboutAppActivityP"
+            android:name=".ui.konsumen.DetailMenuActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.konsumen.FavoriteMenuActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.konsumen.ProfileActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.konsumen.SettingsActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.konsumen.AddressActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pemilik.AddressActivityP"
+            android:exported="false" />
+        <activity
+            android:name=".ui.konsumen.AboutAppActivityK"
+            android:exported="false" />
+        <activity
+            android:name=".ui.pemilik.AboutAppActivityP"
             android:exported="false" />
         <activity
             android:name=".ui.pemilik.AddProfileActivityP"
@@ -31,7 +55,7 @@
             android:name=".ui.pemilik.AddMenuActivityP"
             android:exported="false" />
         <activity
-            android:name=".util.SuccesAddNotificationActivity"
+            android:name="d3ifcool.bisapetcah.mamierus.util.notify.SuccesAddNotificationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
