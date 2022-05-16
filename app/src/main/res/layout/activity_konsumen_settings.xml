@@ -4,6 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".ui.konsumen.SettingsActivityK">
 
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black"
+        android:text="@string/siti_aminah"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/phone_aminah"
+        android:textColor="@color/black"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/ic_keyboard_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/noPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@+id/tvName"
+        android:contentDescription="@string/imageview" />
+
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_favorit"
+        android:backgroundTint="@color/white"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noPhone" />
+
+    <Button
+        android:id="@+id/btnAboutApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_app"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFavorite" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="@string/keluar"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textColor="@color/main"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAboutApp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
