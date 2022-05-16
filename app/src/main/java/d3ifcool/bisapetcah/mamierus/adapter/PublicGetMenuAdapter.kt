@@ -1,15 +1,21 @@
 package d3ifcool.bisapetcah.mamierus.adapter
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import d3ifcool.bisapetcah.mamierus.core.model.PublicGetProductResponses
-import d3ifcool.bisapetcah.mamierus.databinding.ItemFoodBinding
+import d3ifcool.bisapetcah.mamierus.databinding.RvFoodBinding
 
 class PublicGetMenuAdapter (private val list : ArrayList<PublicGetProductResponses>) : RecyclerView.Adapter<PublicGetMenuAdapter.PublicGetMenuAdapterViewHolder>(){
-    inner class PublicGetMenuAdapterViewHolder(private val binding : ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class PublicGetMenuAdapterViewHolder(private val binding : RvFoodBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(responses: PublicGetProductResponses) {
+            binding.apply {
+                val bitmap : Bitmap = BitmapFactory.decodeStream(responses.data?.path?.byteInputStream())
+                imgMenu.setImageBitmap(bitmap)
 
+            }
         }
     }
 
@@ -17,7 +23,7 @@ class PublicGetMenuAdapter (private val list : ArrayList<PublicGetProductRespons
         parent: ViewGroup,
         viewType: Int
     ): PublicGetMenuAdapterViewHolder {
-        val view = ItemFoodBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = RvFoodBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PublicGetMenuAdapterViewHolder(view)
     }
 

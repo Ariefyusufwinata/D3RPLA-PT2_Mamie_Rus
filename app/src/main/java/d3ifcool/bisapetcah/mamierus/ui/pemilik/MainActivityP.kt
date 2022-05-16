@@ -22,13 +22,7 @@ class MainActivityP : AppCompatActivity() {
         val title = resources.getString(R.string.dashboard)
         val actionBar = supportActionBar
         actionBar?.title = title
-        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        onBackPressed()
-//        return super.onSupportNavigateUp()
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menu?.add(Menu.NONE, 1, Menu.NONE, "Alamat Warung")

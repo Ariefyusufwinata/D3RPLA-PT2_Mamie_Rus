@@ -43,20 +43,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun apiItemFood() {
-//        binding.rvItem.setHasFixedSize(true)
-//        binding.rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
-//        Client.instance.getPublicProduct().enqueue(object : Callback<ArrayList<PublicGetProductResponses>> {
+        binding.rvItem.setHasFixedSize(true)
+        binding.rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
+//        Client.instance.getPublicProduct().enqueue(object : Callback<ArrayList<PublicGetProductResponses>>{
 //            override fun onResponse(
 //                call: Call<ArrayList<PublicGetProductResponses>>,
 //                response: Response<ArrayList<PublicGetProductResponses>>
 //            ) {
-//                val adapter = PublicGetMenuAdapter(list)
-//                binding.rvItem.adapter = adapter
+//                TODO("Not yet implemented")
 //            }
 //
 //            override fun onFailure(call: Call<ArrayList<PublicGetProductResponses>>, t: Throwable) {
-//                Log.e("Fail Internal Error", t.message.toString())
+//                TODO("Not yet implemented")
 //            }
+//
 //        })
     }
 

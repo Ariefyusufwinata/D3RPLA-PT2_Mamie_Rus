@@ -8,19 +8,19 @@ interface Api {
 
     //Auth
     @FormUrlEncoded
-    @POST("register")
-    fun register(
-        @Field("username") username : String,
-        @Field("password") password : String,
-        @Field("phone") phone : String
-    ) : Call<RegisterKonsumenResponses>
-
-    @FormUrlEncoded
     @POST("login")
     fun login(
         @Field("username") username : String,
         @Field("password") passsword : String,
     )  : Call<LoginResponses>
+
+    @FormUrlEncoded
+    @POST("register2")
+    fun register(
+        @Field("username") username : String,
+        @Field("password") password : String,
+        @Field("phone") phone : String
+    ) : Call<RegisterKonsumenResponses>
 
     @FormUrlEncoded
     @POST("reset")

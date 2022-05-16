@@ -10,8 +10,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import d3ifcool.bisapetcah.mamierus.core.DELAYTIME
 import d3ifcool.bisapetcah.mamierus.core.SPLASHSCREEN
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityKonsumenSettingsBinding
 import d3ifcool.bisapetcah.mamierus.databinding.ActivitySplashScreenBinding
 import d3ifcool.bisapetcah.mamierus.ui.PortalScreenActivity
+import d3ifcool.bisapetcah.mamierus.ui.konsumen.SettingsActivityK
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -27,7 +29,7 @@ class SplashScreen : AppCompatActivity() {
             override fun run() {
                 try {
                     sleep(DELAYTIME)
-                    startActivity(Intent(baseContext, PortalScreenActivity::class.java))
+                    startActivity(Intent(baseContext, SettingsActivityK::class.java))
                     finish()
                 } catch (e: Exception) {
                     Log.i("$SPLASHSCREEN.Process", "Failed! ${e.localizedMessage}")

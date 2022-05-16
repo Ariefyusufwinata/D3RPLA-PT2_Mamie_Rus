@@ -40,6 +40,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun register(username : String, password : String, phone : String) {
+        Log.d("account", "$username, $password, $phone")
         Client.instance.register(
             username,
             password,

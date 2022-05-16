@@ -38,6 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.pemilik.AboutAppActivityP"
+            android:label="@string/about_app"
             android:exported="false" />
         <activity
             android:name=".ui.pemilik.AddProfileActivityP"
@@ -55,7 +56,7 @@
             android:name=".ui.pemilik.AddMenuActivityP"
             android:exported="false" />
         <activity
-            android:name="d3ifcool.bisapetcah.mamierus.util.notify.SuccesAddNotificationActivity"
+            android:name=".util.notify.SuccesAddNotificationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
@@ -71,8 +72,7 @@
         <activity
             android:name=".ui.pemilik.MainActivityP"
             android:exported="false"
-            android:label="@string/title_activity_main_p"
-            android:theme="@style/Theme.MamieRus.NoActionBar" />
+            android:label="@string/title_activity_main_p"/>
         <activity
             android:name=".ui.konsumen.MainActivityK"
             android:exported="false" />

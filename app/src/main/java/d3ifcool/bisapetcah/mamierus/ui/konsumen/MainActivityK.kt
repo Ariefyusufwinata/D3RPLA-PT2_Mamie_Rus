@@ -22,7 +22,6 @@ class MainActivityK : AppCompatActivity() {
         val title = resources.getString(R.string.dashboard)
         val actionBar = supportActionBar
         actionBar?.title = title
-        actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
