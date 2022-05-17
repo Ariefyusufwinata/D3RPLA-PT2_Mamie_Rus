@@ -72,6 +72,7 @@
     <string name="ingin_masuk">Ingin Masuk?</string>
     <string name="berikan_rating">Berikan Rating Anda</string>
     <string name="berhasil_menambahkan">Berhasil \n Ditambahkan!</string>
+    <string name="title_activity_main_p">Activity Main P</string>
 
     <!-- Version   -->
     <string name="splash_version">Version 1.0 \n Made By ❤️</string>

@@ -71,8 +71,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.pemilik.MainActivityP"
-            android:exported="false"
-            android:label="@string/title_activity_main_p"/>
+            android:exported="false"/>
         <activity
             android:name=".ui.konsumen.MainActivityK"
             android:exported="false" />
