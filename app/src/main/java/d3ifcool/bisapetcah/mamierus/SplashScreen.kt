@@ -29,7 +29,7 @@ class SplashScreen : AppCompatActivity() {
             override fun run() {
                 try {
                     sleep(DELAYTIME)
-                    startActivity(Intent(baseContext, SettingsActivityK::class.java))
+                    startActivity(Intent(baseContext, MainActivity::class.java))
                     finish()
                 } catch (e: Exception) {
                     Log.i("$SPLASHSCREEN.Process", "Failed! ${e.localizedMessage}")
