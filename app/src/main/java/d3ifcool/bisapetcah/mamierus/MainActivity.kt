@@ -4,35 +4,29 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.GridLayout
+import android.view.View
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import d3ifcool.bisapetcah.mamierus.adapter.MainAdapter
-import d3ifcool.bisapetcah.mamierus.adapter.PublicGetMenuAdapter
-import d3ifcool.bisapetcah.mamierus.core.connection.Client
-import d3ifcool.bisapetcah.mamierus.core.model.PublicGetProductResponses
-import d3ifcool.bisapetcah.mamierus.core.viewmodel.MainViewModel
+import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
+import d3ifcool.bisapetcah.mamierus.presenter.adapter.publik.MainAdapter
+import d3ifcool.bisapetcah.mamierus.core.model.publik.DataItem
 import d3ifcool.bisapetcah.mamierus.databinding.ActivityMainBinding
-import d3ifcool.bisapetcah.mamierus.ui.AboutAppActivity
-import d3ifcool.bisapetcah.mamierus.ui.AddressActivity
-import d3ifcool.bisapetcah.mamierus.ui.DetailMenuActivity
-import d3ifcool.bisapetcah.mamierus.ui.LoginActivity
-import okhttp3.internal.notify
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AboutAppActivity
+import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AddressActivity
+import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
+import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.DetailMenuActivity
+import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.publik.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-//    private lateinit var model : MainViewModel
-//    private lateinit var connector : MainAdapter
+    private lateinit var model : MainViewModel
+    private lateinit var connector : MainAdapter
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,36 +37,53 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar?.title = title
 
-//        connector = MainAdapter()
-//        connector.notifyDataSetChanged()
+        connector = MainAdapter()
+        connector.notifyDataSetChanged()
 
-        //From API
-        apiItemFood()
-//        model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java] // .get()ViewModel
-    }
-
-    private fun apiItemFood() {
-        binding.apply {
-            rvItem.setHasFixedSize(true)
-            rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
-        }
-        Client.instance.getPublicProduct().enqueue(object : Callback<PublicGetProductResponses> {
-            override fun onResponse(
-                call: Call<PublicGetProductResponses>,
-                response: Response<PublicGetProductResponses>
-            ) {
-                if(response.isSuccessful){
-                    val adapter = response.body()?.dataAllMenu?.dataItem?.let { PublicGetMenuAdapter(it) }
-                    binding.rvItem.adapter = adapter
-                } else {
-                    Toast.makeText(this@MainActivity, "Gagal Menampilkan Data", Toast.LENGTH_SHORT).show()
+        connector.setOnItemClickCallback(object : MainAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: DataItem) {
+                Intent(this@MainActivity, DetailMenuActivity::class.java).also {
+                    it.putExtra(TemporaryObject.EXTRA_MSG, data.id)
+                    startActivity(it)
                 }
             }
-
-            override fun onFailure(call: Call<PublicGetProductResponses>, t: Throwable) {
-                Log.d("Error Internal", t.toString())
-            }
         })
+
+        model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
+        model.getMenu()
+        loadingTime(true)
+        model.getValue().observe(this) {
+            when {
+                it != null -> {
+                    connector.setList(it)
+                    loadingTime(false)
+                }
+                false -> {
+                    Toast.makeText(this, "Empty", Toast.LENGTH_LONG).show()
+                    loadingTime(false)
+                }
+            }
+        }
+
+
+        binding.apply {
+            rvItem.setHasFixedSize(true)
+            rvItem.adapter = connector
+            rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
+        }
+    }
+
+    private fun loadingTime(isTrue : Boolean) {
+        binding.apply {
+            when(isTrue) {
+                true -> {
+                    progressBar.visibility = View.VISIBLE
+                }
+                false -> {
+                    progressBar.visibility = View.GONE
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -19,14 +19,6 @@ object Client {
         .readTimeout(30, TimeUnit.SECONDS)
         .build()
 
-//    private val client = Retrofit.Builder()
-//        .client(okHttpClient)
-//        .baseUrl(BASE_URL)
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .build()
-//
-//    val api = client.create(Client::class.java)
-
     val instance : Api by lazy {
         val retrofit = Retrofit.Builder()
             .client(okHttpClient)
