@@ -42,6 +42,10 @@
     <string name="upload_bukti">Upload Bukti Pembelian</string>
     <string name="masukkan_kata_sandi">Masukkan Kata Sandi</string>
     <string name="masukkan_nama_pengguna">Masukkan Nama Pengguna</string>
+    <string name="ex_nama">ex : Mie Ayam Bakso</string>
+    <string name="ex_jenis">ex : Makanan</string>
+    <string name="ex_harga">ex : Harga</string>
+    <string name="ex_desc">ex : Mie Ayam dengan cita rasa bawang dan ayam suwir tanpa tulang. Sangat cocok untuk disajikan dengan es teh manis.</string>
 
     <!--  Name User  -->
     <string name="siti_aminah">Siti Aminah</string>
@@ -49,17 +53,27 @@
     <!--  Number Phone  -->
     <string name="phone_aminah">0822134567987</string>
 
+    <!-- Description   -->
+    <string name="imageview">ImageView</string>
+    <string name="imageAction">ImageAction</string>
+
+    <!-- Tittle -->
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="belum_mempunyai_akun">Belum mempunyai akun?</string>
+
+    <!-- Version   -->
+    <string name="splash_version">Version 1.0 \n Made By ❤️</string>
+
     <!--  Section  -->
     <string name="kami_menyediakan">Kami Menyediakan Mie Ayam \n Selera Keluarga Anda</string>
     <string name="desc_about">Mamie Rus merupakan aplikasi berbasis android yang bertujuan untuk men-digitalisasikan menu di Warung Mie Ayam Pak Rusyono. Dan memudahkan pembeli dalam pembelian mie ayam di Warung Pak Rusyono.\n\nDengan adanya Mamie Rus ini, kami berharap penjualan mie ayam Pak Rusyono dapat meningkat dan pembeli dapat dengan mudah untuk melakukan pembelian mie ayam di Warung Pak Rusyono. </string>
     <string name="desc_detail">Mie Ayam dengan cita rasa bawang dan ayam suwir tanpa tulang. Sangat cocok untuk disajikan dengan es teh manis.</string>
     <string name="selamat_datang">Selamat Datang Di \n Mamie Rus</string>
-    <string name="nama_pengguna">Nama Pengguna</string>
-    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
-    <string name="belum_mempunyai_akun">Belum mempunyai akun?</string>
+
+
     <string name="deskripsi_alamat_warung">Warung Mie Ayam Pak Rusyono adalah usaha mie ayam yang sudah berdiri sejak tahun 2020. Letaknya ada di Jl. Masjid Agung No.40B, RT.03/RW.04, Banjar, Kec. Banjar, Kota Banjar, Jawa Barat. </string>
     <string name="jam_buka_tutup">Tutup • Buka Hari Ini Jam 9.30 WIB</string>
-    <string name="send">SEND</string>
     <string name="kata_sandi">Kata Sandi</string>
     <string name="yuk_daftar_akun">Yuk, Daftar Akun</string>
     <string name="nomor_hp">Nomor HP</string>
@@ -72,11 +86,9 @@
     <string name="ingin_masuk">Ingin Masuk?</string>
     <string name="berikan_rating">Berikan Rating Anda</string>
     <string name="berhasil_menambahkan">Berhasil \n Ditambahkan!</string>
-    <string name="title_activity_main_p">Activity Main P</string>
-
-    <!-- Version   -->
-    <string name="splash_version">Version 1.0 \n Made By ❤️</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="jenis">Jenis</string>
+    <string name="harga">Harga</string>
+    <string name="gambar">Gambar</string>
     <string name="value_rating">4.0</string>
-
-    <string name="imageview">ImageView</string>
 </resources>
