@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".ui.AddressActivity">
+        tools:context=".presenter.ui.publik.AddressActivity">
 
         <ImageView
             android:id="@+id/imgWarung"
@@ -19,44 +19,51 @@
             android:contentDescription="@string/imageview"
             />
 
-        <ImageView
-            android:id="@+id/ic_clock"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:contentDescription="@string/imageview"
-            android:src="@drawable/icon_clock"
-            app:layout_constraintEnd_toStartOf="@id/tvJamBukaTutup"
-            app:layout_constraintBottom_toBottomOf="@+id/tvJamBukaTutup"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvJamBukaTutup" />
-
-        <TextView
-            android:id="@+id/tvJamBukaTutup"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/jam_buka_tutup"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/ic_clock"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgWarung" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWarung">
+
+                <ImageView
+                    android:id="@+id/ic_clock"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:contentDescription="@string/imageview"
+                    android:src="@drawable/icon_clock" />
+
+                <TextView
+                    android:id="@+id/tvJamBukaTutup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/jam_buka_tutup"
+                    android:textColor="@color/black"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvMamieRus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/mamie_rus"
             android:textColor="@color/black"
             android:textSize="25sp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvJamBukaTutup" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <TextView
             android:id="@+id/tvDeskripsi"
@@ -69,7 +76,8 @@
             android:justificationMode="inter_word"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMamieRus" />
+            app:layout_constraintTop_toBottomOf="@+id/tvMamieRus"
+            tools:targetApi="o" />
 
         <Button
             android:id="@+id/btnGmaps"

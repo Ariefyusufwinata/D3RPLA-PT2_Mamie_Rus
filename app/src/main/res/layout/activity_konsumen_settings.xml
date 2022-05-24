@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".ui.konsumen.SettingsActivityK">
+    tools:context=".presenter.ui.konsumen.SettingsActivityK">
 
     <TextView
         android:id="@+id/tvName"

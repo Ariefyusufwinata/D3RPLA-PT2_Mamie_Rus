@@ -50,14 +50,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/rv_food"
         />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="invisible"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:visibility="visible"
+        android:indeterminateTint="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.konsumen.ProfileActivityK">
+    tools:context=".presenter.ui.konsumen.ProfileActivityK">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailMenuActivity">
+    tools:context=".presenter.ui.publik.DetailMenuActivity">
 
     <ImageView
         android:id="@+id/imgPhoto"
@@ -49,7 +49,7 @@
         />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnWhatsApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/whatsapp"

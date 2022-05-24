@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.konsumen.MainActivityK">
+    tools:context=".presenter.ui.konsumen.MainActivityK">
 
     <EditText
         android:id="@+id/edtCari"
