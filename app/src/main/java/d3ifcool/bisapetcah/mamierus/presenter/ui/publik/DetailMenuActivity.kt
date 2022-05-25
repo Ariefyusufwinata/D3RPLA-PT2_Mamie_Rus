@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import d3ifcool.bisapetcah.mamierus.R
@@ -35,7 +37,8 @@ class DetailMenuActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val id = intent.getIntExtra(TemporaryObject.EXTRA_MSG, 0)
-        Log.d("getId", id.toString())
+
+        loadingTime(true)
 
         detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
         detailViewModel.getDetailProduct(id)
@@ -46,15 +49,22 @@ class DetailMenuActivity : AppCompatActivity() {
 
             Log.d("image-menu", image.toString())
 
-            if(it != null) {
-                binding.apply {
-                    Glide.with(this@DetailMenuActivity)
-                        .load(image)
-                        .centerCrop()
-                        .into(imgPhoto)
+            when(it != null) {
+                true -> {
+                    binding.apply {
+                        Glide.with(this@DetailMenuActivity)
+                            .load(image)
+                            .centerCrop()
+                            .into(imgPhoto)
 
-                    tvMenu.text = name
-                    tvDeskripsi.text = desc
+                        tvMenu.text = name
+                        tvDeskripsi.text = desc
+                    }
+                    loadingTime(false)
+                }
+                false -> {
+                    Toast.makeText(this@DetailMenuActivity, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
+                    loadingTime(false)
                 }
             }
         }
@@ -62,20 +72,39 @@ class DetailMenuActivity : AppCompatActivity() {
         addressModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[AddressViewModel::class.java]
         addressModel.getAddress()
         addressModel.getValue().observe(this) { it ->
-//            val phone = it.dataProfile?.phone.toString()
-//            val phone = "6289530050567" // Yazid
-            val phone = "6281263189957"
+            val phone = it.dataProfile?.phone.toString()
+//            val phone = "6281263189957"
             val message = "*Form%20Pemesanan%20Makanan%20Warung%20Mamie%20Rus*%0A%0A-%20Data%20Diri%20-%0ANama%20%3A%20%0ANo%20HP%20%3A%0AAlamat%20%3A%0A%0A-%20Makanan%20Yang%20Dipesan-%20%0ANama%20Makanan%20%3A%0AJumlah%20%3A"
             val uri = "$BASE_WA$phone?text=$message"
             Log.d("number-phone", phone)
 
-            if(it != null) {
-                binding.btnWhatsApp.setOnClickListener {
-                    Intent(Intent.ACTION_VIEW).also {
+            when(it != null) {
+                true -> {
+                    binding.btnWhatsApp.setOnClickListener {
+                        Intent(Intent.ACTION_VIEW).also {
 
-                        it.data = Uri.parse(uri)
-                        startActivity(it)
+                            it.data = Uri.parse(uri)
+                            startActivity(it)
+                        }
                     }
+                    loadingTime(false)
+                }
+                false -> {
+                    Toast.makeText(this@DetailMenuActivity, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
+                    loadingTime(false)
+                }
+            }
+        }
+    }
+
+    private fun loadingTime(isTrue : Boolean) {
+        binding.apply {
+            when(isTrue) {
+                true -> {
+                    progressBar.visibility = View.VISIBLE
+                }
+                false -> {
+                    progressBar.visibility = View.GONE
                 }
             }
         }

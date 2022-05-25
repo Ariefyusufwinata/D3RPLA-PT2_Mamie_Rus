@@ -1,7 +1,7 @@
 package d3ifcool.bisapetcah.mamierus.core.helper
 
 //Splash Screen Utils
-const val DELAYTIME : Long = 1000
+const val DELAYTIME : Long = 5000
 const val SPLASHSCREEN = "SplashScreen"
 
 //Base

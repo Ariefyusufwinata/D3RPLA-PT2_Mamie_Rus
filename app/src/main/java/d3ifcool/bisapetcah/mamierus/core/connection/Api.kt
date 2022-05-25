@@ -58,6 +58,23 @@ interface Api {
     fun getPublicProduct(
     ) : Call<PublicGetProductResponses>
 
+    @GET("public/product")
+    fun getPublicProductSearch(
+        @Query("name") name : String
+    ) : Call<PublicGetProductResponses>
+
+    @GET("public/product?sortRating=DESC")
+    fun getPublicProductSortMost(
+    ) : Call<PublicGetProductResponses>
+
+    @GET("public/product?sortPrice=DESC")
+    fun getPublicProductSortPriceDESC(
+    ) : Call<PublicGetProductResponses>
+
+    @GET("public/product?sortPrice=ASC")
+    fun getPublicProductSortPriceASC(
+    ) : Call<PublicGetProductResponses>
+
     @GET("public/product/{product_id}")
     fun getPublicOneProduct(
         @Path("product_id") productId : Int

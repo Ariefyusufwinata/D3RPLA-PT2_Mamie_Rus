@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -50,26 +52,51 @@ class MainActivity : AppCompatActivity() {
         })
 
         model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
-        model.getMenu()
+        model.getAllMenu()
         loadingTime(true)
         model.getValue().observe(this) {
-            when {
-                it != null -> {
+            when(it != null) {
+                true -> {
                     connector.setList(it)
                     loadingTime(false)
                 }
                 false -> {
-                    Toast.makeText(this, "Empty", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
                     loadingTime(false)
                 }
             }
         }
 
-
         binding.apply {
             rvItem.setHasFixedSize(true)
             rvItem.adapter = connector
             rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
+
+            edtCari.setOnKeyListener { _, i, keyEvent ->
+                return@setOnKeyListener keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER
+            }
+
+            edtCari.setOnEditorActionListener { _, i, _ ->
+                if(i == EditorInfo.IME_ACTION_SEARCH) {
+                    searchMenu()
+                }
+                true
+            }
+        }
+    }
+
+    private fun searchMenu() {
+        binding.apply {
+            val search = edtCari.text.toString()
+            when {
+                search.isEmpty() -> {
+                    model.getAllMenu()
+                    loadingTime(true)
+                }
+                search.isNotEmpty() -> {
+                    model.getSearchMenu(search)
+                    loadingTime(true)
+                }                }
         }
     }
 

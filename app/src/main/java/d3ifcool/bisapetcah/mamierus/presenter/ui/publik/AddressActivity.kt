@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.bumptech.glide.Glide
 import d3ifcool.bisapetcah.mamierus.R
 import d3ifcool.bisapetcah.mamierus.core.helper.INTERNAL_SERVER
@@ -81,6 +82,19 @@ class AddressActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun loadingTime(isTrue : Boolean) {
+        binding.apply {
+            when(isTrue) {
+                true -> {
+                    progressBar.visibility = View.VISIBLE
+                }
+                false -> {
+                    progressBar.visibility = View.GONE
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
