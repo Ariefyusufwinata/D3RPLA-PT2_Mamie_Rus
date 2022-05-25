@@ -13,8 +13,8 @@ import retrofit2.Response
 
 class MainViewModel : ViewModel() {
 
-    val list = MutableLiveData<ArrayList<DataItem>>()
-    fun getValue() : MutableLiveData<ArrayList<DataItem>> {
+    val list = MutableLiveData<List<DataItem?>?>()
+    fun getValue() : MutableLiveData<List<DataItem?>?> {
         return list
     }
 
@@ -25,7 +25,7 @@ class MainViewModel : ViewModel() {
                 response: Response<PublicGetProductResponses>
             ) {
                 if(response.isSuccessful){
-                    list.postValue(response.body()?.dataAllMenu?.dataItem as ArrayList<DataItem>)
+                    list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
                     Log.i("Blank Data", response.body().toString())
                 }
@@ -46,7 +46,7 @@ class MainViewModel : ViewModel() {
                 response: Response<PublicGetProductResponses>
             ) {
                 if(response.isSuccessful) {
-                    list.postValue(response.body()?.dataAllMenu?.dataItem as ArrayList<DataItem>)
+                    list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
                     Log.i("Blank Data", response.body().toString())
                 }
@@ -66,7 +66,7 @@ class MainViewModel : ViewModel() {
                 response: Response<PublicGetProductResponses>
             ) {
                 if(response.isSuccessful) {
-                    list.postValue(response.body()?.dataAllMenu?.dataItem as ArrayList<DataItem>)
+                    list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
                     Log.i("Blank Data", response.body().toString())
                 }
@@ -85,7 +85,7 @@ class MainViewModel : ViewModel() {
                 response: Response<PublicGetProductResponses>
             ) {
                 if(response.isSuccessful) {
-                    list.postValue(response.body()?.dataAllMenu?.dataItem as ArrayList<DataItem>)
+                    list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
                     Log.i("Blank Data", response.body().toString())
                 }
@@ -104,7 +104,7 @@ class MainViewModel : ViewModel() {
                 response: Response<PublicGetProductResponses>
             ) {
                 if(response.isSuccessful) {
-                    list.postValue(response.body()?.dataAllMenu?.dataItem as ArrayList<DataItem>)
+                    list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
                     Log.i("Blank Data", response.body().toString())
                 }

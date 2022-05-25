@@ -94,4 +94,13 @@
     <string name="value_rating">4.0</string>
     <string name="komentar">Komentar</string>
     <string name="batal">Batal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pasang">Pasang</string>
+    <string name="paling_sesuai">Paling Sesuai</string>
+    <string name="paling_murah">Paling Murah</string>
+    <string name="paling_mahal">Paling Mahal</string>
+    <string name="filter_menu">Filter Menu</string>
+    <string name="hapus_filter">Hapus Filter</string>
+    <string name="urutkan">Urutkan</string>
 </resources>

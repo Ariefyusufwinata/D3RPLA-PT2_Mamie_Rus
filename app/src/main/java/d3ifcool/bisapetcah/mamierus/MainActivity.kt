@@ -16,6 +16,7 @@ import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
 import d3ifcool.bisapetcah.mamierus.presenter.adapter.publik.MainAdapter
 import d3ifcool.bisapetcah.mamierus.core.model.publik.DataItem
 import d3ifcool.bisapetcah.mamierus.databinding.ActivityMainBinding
+import d3ifcool.bisapetcah.mamierus.presenter.fragment.BottomSheetFragment
 import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AboutAppActivity
 import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AddressActivity
 import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var model : MainViewModel
     private lateinit var connector : MainAdapter
+    private lateinit var bottomSheetFragment : BottomSheetFragment
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +43,10 @@ class MainActivity : AppCompatActivity() {
 
         connector = MainAdapter()
         connector.notifyDataSetChanged()
-
         connector.setOnItemClickCallback(object : MainAdapter.OnItemClickCallback{
-            override fun onItemClicked(data: DataItem) {
+            override fun onItemClicked(data: DataItem?) {
                 Intent(this@MainActivity, DetailMenuActivity::class.java).also {
-                    it.putExtra(TemporaryObject.EXTRA_MSG, data.id)
+                    it.putExtra(TemporaryObject.EXTRA_MSG, data?.id)
                     startActivity(it)
                 }
             }
@@ -72,15 +73,22 @@ class MainActivity : AppCompatActivity() {
             rvItem.adapter = connector
             rvItem.layoutManager = GridLayoutManager(this@MainActivity, 2)
 
-            edtCari.setOnKeyListener { _, i, keyEvent ->
-                return@setOnKeyListener keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER
+            edtCari.apply {
+                setOnKeyListener { _, i, keyEvent ->
+                    return@setOnKeyListener keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER
+                }
+
+                setOnEditorActionListener { _, i, _ ->
+                    if(i == EditorInfo.IME_ACTION_SEARCH) {
+                        searchMenu()
+                    }
+                    true
+                }
             }
 
-            edtCari.setOnEditorActionListener { _, i, _ ->
-                if(i == EditorInfo.IME_ACTION_SEARCH) {
-                    searchMenu()
-                }
-                true
+            btnFilter.setOnClickListener {
+                bottomSheetFragment = BottomSheetFragment()
+                bottomSheetFragment.show(supportFragmentManager, "Show Fragment")
             }
         }
     }

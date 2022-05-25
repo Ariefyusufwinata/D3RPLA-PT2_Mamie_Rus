@@ -11,11 +11,11 @@ import d3ifcool.bisapetcah.mamierus.databinding.RvFoodBinding
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.PublicGetMenuAdapterViewHolder>(){
 
-    private val dataMenu = ArrayList<DataItem>()
+    private val dataMenu = mutableListOf<DataItem?>()
     private var onItemClickCallback: OnItemClickCallback? = null
 
     interface OnItemClickCallback{
-        fun onItemClicked(data: DataItem)
+        fun onItemClicked(data: DataItem?)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -23,7 +23,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.PublicGetMenuAdapterViewHol
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(menus : ArrayList<DataItem>){
+    fun setList(menus : List<DataItem?>){
         dataMenu.clear()
         dataMenu.addAll(menus)
         notifyDataSetChanged()
@@ -31,12 +31,12 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.PublicGetMenuAdapterViewHol
 
     inner class PublicGetMenuAdapterViewHolder(private val binding : RvFoodBinding) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
-        fun bind(responses : DataItem) {
+        fun bind(responses : DataItem?) {
             binding.apply {
-                val imageMenu = responses.images?.get(0)?.path
-                val nameMenu = responses.name.toString()
-                val priceMenu = responses.price.toString()
-                val rating = responses.rating.toString()
+                val imageMenu = responses?.images?.get(0)?.path
+                val nameMenu = responses?.name.toString()
+                val priceMenu = responses?.price.toString()
+                val rating = responses?.rating.toString()
 
                 //Presenter
                 Glide.with(itemView)
@@ -49,7 +49,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.PublicGetMenuAdapterViewHol
 
                 root.setOnClickListener {
                     onItemClickCallback?.onItemClicked(responses)
-                    Log.d("item", responses.id.toString())
+                    Log.d("item", responses?.id.toString())
                 }
             }
         }
