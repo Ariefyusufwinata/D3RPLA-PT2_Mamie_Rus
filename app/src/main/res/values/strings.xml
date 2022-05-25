@@ -49,6 +49,7 @@
 
     <!--  Name User  -->
     <string name="siti_aminah">Siti Aminah</string>
+    <string name="rusyono">Rusyono</string>
 
     <!--  Number Phone  -->
     <string name="phone_aminah">0822134567987</string>
@@ -91,4 +92,6 @@
     <string name="harga">Harga</string>
     <string name="gambar">Gambar</string>
     <string name="value_rating">4.0</string>
+    <string name="komentar">Komentar</string>
+    <string name="batal">Batal</string>
 </resources>
