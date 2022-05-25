@@ -1,14 +1,15 @@
 package d3ifcool.bisapetcah.mamierus.presenter.ui.auth
 
-import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.Gravity
+import android.view.View
+import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityPortalScreenBinding
 import d3ifcool.bisapetcah.mamierus.MainActivity
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPortalScreenBinding
 
 class PortalScreenActivity : AppCompatActivity() {
 
@@ -16,7 +17,6 @@ class PortalScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityPortalScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -42,19 +42,31 @@ class PortalScreenActivity : AppCompatActivity() {
     }
 
     private fun checkConnection() {
-        val connection = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connection = this.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = connection.activeNetworkInfo
         if (activeNetwork != null) {
             if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
-                Snackbar.make(binding.root, "Terhubung Internet Dengan WIFI!", Snackbar.LENGTH_LONG).show()
+                alert("Terhubung Internet Dengan WIFI!")
             }
             if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
-                Snackbar.make(binding.root, "Terhubung Internet Dengan Data!", Snackbar.LENGTH_LONG).show()
+                alert("Terhubung Internet Dengan Data!")
             }
         } else {
-            Snackbar.make(binding.root, "Tidak Ada Koneksi Internet!", Snackbar.LENGTH_LONG).show()
+            alert("Tidak Ada Koneksi")
         }
     }
 
+    private fun alert (str : String) {
+        val snack : Snackbar = Snackbar.make(
+            binding.root,
+            str,
+            Snackbar.LENGTH_SHORT
+        )
+        val view : View = snack.view
+        val params = view.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        view.layoutParams = params
+        snack.show()
+    }
 
 }
