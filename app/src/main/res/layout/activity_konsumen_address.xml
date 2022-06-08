@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/extAddress"
-        layout="@layout/activity_address"
+        layout="@layout/activity_public_address"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

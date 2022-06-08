@@ -44,7 +44,7 @@
         android:contentDescription="@string/imageview" />
 
     <Button
-        android:id="@+id/btnKomentar"
+        android:id="@+id/btnLihatKomentar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/komentar_pembeli"
@@ -70,7 +70,7 @@
         android:layout_margin="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnKomentar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLihatKomentar" />
 
     <Button
         android:id="@+id/btnLogout"

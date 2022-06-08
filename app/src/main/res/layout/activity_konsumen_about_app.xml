@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/extendedAboutApp"
-        layout="@layout/activity_about_app"
+        layout="@layout/activity_public_about_app"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
