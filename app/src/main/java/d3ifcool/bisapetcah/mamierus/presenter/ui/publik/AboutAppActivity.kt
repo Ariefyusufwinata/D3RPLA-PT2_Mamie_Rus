@@ -6,16 +6,16 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import d3ifcool.bisapetcah.mamierus.R
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityAboutAppBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPublicAboutAppBinding
 import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
 
 class AboutAppActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAboutAppBinding
+    private lateinit var binding : ActivityPublicAboutAppBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAboutAppBinding.inflate(layoutInflater)
+        binding = ActivityPublicAboutAppBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val title = resources.getString(R.string.about_app)

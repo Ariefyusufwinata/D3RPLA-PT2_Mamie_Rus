@@ -7,18 +7,18 @@ import android.util.Log
 import android.widget.Toast
 import d3ifcool.bisapetcah.mamierus.core.connection.Client
 import d3ifcool.bisapetcah.mamierus.core.model.auth.ResetPasswordResponses
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityForgetPasswordBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityAuthForgetPasswordBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class ForgetPasswordActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityForgetPasswordBinding
+    private lateinit var binding : ActivityAuthForgetPasswordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityForgetPasswordBinding.inflate(layoutInflater)
+        binding = ActivityAuthForgetPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.apply {

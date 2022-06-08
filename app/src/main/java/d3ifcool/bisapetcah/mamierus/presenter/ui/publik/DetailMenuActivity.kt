@@ -14,14 +14,14 @@ import com.bumptech.glide.Glide
 import d3ifcool.bisapetcah.mamierus.R
 import d3ifcool.bisapetcah.mamierus.core.helper.BASE_WA
 import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityDetailMenuBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPublicDetailMenuBinding
 import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
 import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.publik.AddressViewModel
 import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.publik.DetailViewModel
 
 class DetailMenuActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityDetailMenuBinding
+    private lateinit var binding : ActivityPublicDetailMenuBinding
     private lateinit var detailViewModel : DetailViewModel
     private lateinit var addressModel : AddressViewModel
 
@@ -33,10 +33,10 @@ class DetailMenuActivity : AppCompatActivity() {
         actionBar?.title = tittle
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding = ActivityDetailMenuBinding.inflate(layoutInflater)
+        binding = ActivityPublicDetailMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val id = intent.getIntExtra(TemporaryObject.EXTRA_MSG, 0)
+        val id = intent.getIntExtra(TemporaryObject.EXTRA_ID, 0)
 
         loadingTime(true)
 
@@ -73,7 +73,6 @@ class DetailMenuActivity : AppCompatActivity() {
         addressModel.getAddress()
         addressModel.getValue().observe(this) { it ->
             val phone = it.dataProfile?.phone.toString()
-//            val phone = "6281263189957"
             val message = "*Form%20Pemesanan%20Makanan%20Warung%20Mamie%20Rus*%0A%0A-%20Data%20Diri%20-%0ANama%20%3A%20%0ANo%20HP%20%3A%0AAlamat%20%3A%0A%0A-%20Makanan%20Yang%20Dipesan-%20%0ANama%20Makanan%20%3A%0AJumlah%20%3A"
             val uri = "$BASE_WA$phone?text=$message"
             Log.d("number-phone", phone)

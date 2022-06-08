@@ -36,22 +36,15 @@ interface Api {
 
     @FormUrlEncoded
     @DELETE("logout")
-    @Headers("token")
+    @Headers("Auth")
     fun logout(
     )  : Call<LogoutResponses>
 
-    //Pemilik
-    @GET("public/profile")
-    @Headers("token")
+    @GET("user")
+    @Headers("Bearer Token : {token}")
     fun getPemilikProfile(
-
+        @Header("token") token: String
     ) : Call<PemilikGetProfileResponses>
-
-    //Konsumen
-    @GET("public/profile")
-    fun getKonsumenProfile(
-
-    ) : Call<PublicGetProfileResponses>
 
     //Publik
     @GET("public/product")

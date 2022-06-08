@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.*
 import d3ifcool.bisapetcah.mamierus.core.connection.Client
+import d3ifcool.bisapetcah.mamierus.core.helper.BLANK_DATA
 import d3ifcool.bisapetcah.mamierus.core.helper.INTERNAL_SERVER
 import d3ifcool.bisapetcah.mamierus.core.model.publik.DataItem
 import d3ifcool.bisapetcah.mamierus.core.model.publik.PublicGetProductResponses
@@ -27,7 +28,7 @@ class MainViewModel : ViewModel() {
                 if(response.isSuccessful){
                     list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
-                    Log.i("Blank Data", response.body().toString())
+                    Log.i(BLANK_DATA, response.body().toString())
                 }
             }
 
@@ -48,7 +49,7 @@ class MainViewModel : ViewModel() {
                 if(response.isSuccessful) {
                     list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
-                    Log.i("Blank Data", response.body().toString())
+                    Log.i(BLANK_DATA, response.body().toString())
                 }
             }
 
@@ -68,7 +69,7 @@ class MainViewModel : ViewModel() {
                 if(response.isSuccessful) {
                     list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
-                    Log.i("Blank Data", response.body().toString())
+                    Log.i(BLANK_DATA, response.body().toString())
                 }
             }
 
@@ -87,7 +88,7 @@ class MainViewModel : ViewModel() {
                 if(response.isSuccessful) {
                     list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
-                    Log.i("Blank Data", response.body().toString())
+                    Log.i(BLANK_DATA, response.body().toString())
                 }
             }
 
@@ -106,7 +107,7 @@ class MainViewModel : ViewModel() {
                 if(response.isSuccessful) {
                     list.postValue(response.body()?.dataAllMenu?.dataItem)
                 } else {
-                    Log.i("Blank Data", response.body().toString())
+                    Log.i(BLANK_DATA, response.body().toString())
                 }
             }
 

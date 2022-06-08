@@ -2,38 +2,25 @@ package d3ifcool.bisapetcah.mamierus.presenter.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
-import android.view.View
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
-import d3ifcool.bisapetcah.mamierus.MainActivity
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityPortalScreenBinding
-import d3ifcool.bisapetcah.mamierus.presenter.util.ConnectionCheck
+import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.MainActivity
+import d3ifcool.bisapetcah.mamierus.core.datastore.PreferencesData
+import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityAuthPortalScreenBinding
+import d3ifcool.bisapetcah.mamierus.presenter.ui.konsumen.MainActivityK
+import d3ifcool.bisapetcah.mamierus.presenter.ui.pemilik.MainActivityP
 
 class PortalScreenActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityPortalScreenBinding
-    private val connectionCheck = ConnectionCheck()
+    private lateinit var binding : ActivityAuthPortalScreenBinding
+    private lateinit var sharedPref : PreferencesData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPortalScreenBinding.inflate(layoutInflater)
+        binding = ActivityAuthPortalScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        if(connectionCheck.isNetworkAvailable(this) == "WIFI") {
-//            alert("Terhubung Dengan WIFI!")
-//            navigation(true)
-//        }
-//        if(connectionCheck.isNetworkAvailable(this) == "CELLULAR") {
-//            alert("Terhubung Dengan Data!")
-//            navigation(true)
-//        }
-//        if(connectionCheck.isNetworkAvailable(this) == "NO") {
-//            alert("Tidak Ada Internet!")
-//            navigation(false)
-//        }
+        sharedPref = PreferencesData(this@PortalScreenActivity)
 
         binding.apply {
             btnLogin.setOnClickListener {
@@ -57,60 +44,18 @@ class PortalScreenActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigation(network : Boolean){
-        binding.apply {
-            btnLogin.setOnClickListener {
-                when(network) {
-                    true -> {
-                        Intent(this@PortalScreenActivity, LoginActivity::class.java).also {
-                            startActivity(it)
-                        }
-                    }
-                    false -> {
-                        alert("Perikasa Sambungan Anda!")
-                    }
-                }
+    override fun onStart() {
+        super.onStart()
+        if(sharedPref.getBoolean(TemporaryObject.PREFS_STATUS)) {
+            if(sharedPref.getString(TemporaryObject.PREFS_ROLE) == "konsumen"){
+                startActivity(Intent(this@PortalScreenActivity, MainActivityK::class.java))
+                finish()
             }
-
-            btnDaftar.setOnClickListener {
-                when(network) {
-                    true -> {
-                        Intent(this@PortalScreenActivity, RegisterActivity::class.java).also {
-                            startActivity(it)
-                        }
-                    }
-                    false -> {
-                        alert("Perikasa Sambungan Anda!")
-                    }
-                }
-            }
-
-            btnLewati.setOnClickListener {
-                when(network) {
-                    true -> {
-                        Intent(this@PortalScreenActivity, MainActivity::class.java).also {
-                            startActivity(it)
-                        }
-                    }
-                    false -> {
-                        alert("Perikasa Sambungan Anda!")
-                    }
-                }
+            if(sharedPref.getString(TemporaryObject.PREFS_ROLE) == "pemilik"){
+                startActivity(Intent(this@PortalScreenActivity, MainActivityP::class.java))
+                finish()
             }
         }
-    }
-
-    private fun alert (str : String) {
-        val snack : Snackbar = Snackbar.make(
-            binding.root,
-            str,
-            Snackbar.LENGTH_SHORT
-        )
-        val view : View = snack.view
-        val params = view.layoutParams as FrameLayout.LayoutParams
-        params.gravity = Gravity.TOP
-        view.layoutParams = params
-        snack.show()
     }
 
 }

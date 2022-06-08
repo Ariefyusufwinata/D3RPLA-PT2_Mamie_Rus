@@ -13,7 +13,7 @@ import d3ifcool.bisapetcah.mamierus.R
 import d3ifcool.bisapetcah.mamierus.core.helper.INTERNAL_SERVER
 import d3ifcool.bisapetcah.mamierus.core.connection.Client
 import d3ifcool.bisapetcah.mamierus.core.model.publik.PublicGetProfileResponses
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityAddressBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPublicAddressBinding
 import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,11 +21,11 @@ import retrofit2.Response
 
 class AddressActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAddressBinding
+    private lateinit var binding : ActivityPublicAddressBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddressBinding.inflate(layoutInflater)
+        binding = ActivityPublicAddressBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val title = resources.getString(R.string.address)
         val actionBar = supportActionBar

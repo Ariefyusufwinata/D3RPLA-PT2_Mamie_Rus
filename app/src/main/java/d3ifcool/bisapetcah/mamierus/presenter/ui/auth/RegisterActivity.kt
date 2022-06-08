@@ -8,18 +8,18 @@ import android.widget.Toast
 import d3ifcool.bisapetcah.mamierus.core.helper.FAILURE_PRESENTER
 import d3ifcool.bisapetcah.mamierus.core.connection.Client
 import d3ifcool.bisapetcah.mamierus.core.model.konsumen.KonsumenRegisterResponses
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityRegisterBinding
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityAuthRegisterBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityRegisterBinding
+    private lateinit var binding : ActivityAuthRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityAuthRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.apply {

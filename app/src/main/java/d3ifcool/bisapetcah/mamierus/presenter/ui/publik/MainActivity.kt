@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus
+package d3ifcool.bisapetcah.mamierus.presenter.ui.publik
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,29 +12,28 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import d3ifcool.bisapetcah.mamierus.R
+import d3ifcool.bisapetcah.mamierus.core.helper.FAILURE_PRESENTER
 import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
 import d3ifcool.bisapetcah.mamierus.presenter.adapter.publik.MainAdapter
 import d3ifcool.bisapetcah.mamierus.core.model.publik.DataItem
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityMainBinding
-import d3ifcool.bisapetcah.mamierus.presenter.fragment.BottomSheetFragment
-import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AboutAppActivity
-import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.AddressActivity
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityPublicMainBinding
+import d3ifcool.bisapetcah.mamierus.presenter.fragment.BottomSheetFragmentPublic
 import d3ifcool.bisapetcah.mamierus.presenter.ui.auth.LoginActivity
-import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.DetailMenuActivity
 import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.publik.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding : ActivityPublicMainBinding
     private lateinit var model : MainViewModel
     private lateinit var connector : MainAdapter
-    private lateinit var bottomSheetFragment : BottomSheetFragment
+    private lateinit var bottomSheetFragment : BottomSheetFragmentPublic
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPublicMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val title = resources.getString(R.string.dashboard)
@@ -46,14 +45,29 @@ class MainActivity : AppCompatActivity() {
         connector.setOnItemClickCallback(object : MainAdapter.OnItemClickCallback{
             override fun onItemClicked(data: DataItem?) {
                 Intent(this@MainActivity, DetailMenuActivity::class.java).also {
-                    it.putExtra(TemporaryObject.EXTRA_MSG, data?.id)
+                    it.putExtra(TemporaryObject.EXTRA_ID, data?.id)
                     startActivity(it)
                 }
             }
         })
 
         model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
-        model.getAllMenu()
+
+        //Sorting Companion Object For Chossing In Filtering Menu
+        when (TemporaryObject.EXTRA_MSG) {
+            "Paling Sesuai" -> {
+                model.getSortMost()
+            }
+            "Paling Murah" -> {
+                model.getSortPriceASC()
+            }
+            "Paling Mahal" -> {
+                model.getSortPriceDESC()
+            }
+            else -> {
+                model.getAllMenu()
+            }
+        }
         loadingTime(true)
         model.getValue().observe(this) {
             when(it != null) {
@@ -62,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                     loadingTime(false)
                 }
                 false -> {
-                    Toast.makeText(this, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, FAILURE_PRESENTER, Toast.LENGTH_LONG).show()
                     loadingTime(false)
                 }
             }
@@ -87,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             btnFilter.setOnClickListener {
-                bottomSheetFragment = BottomSheetFragment()
+                bottomSheetFragment = BottomSheetFragmentPublic()
                 bottomSheetFragment.show(supportFragmentManager, "Show Fragment")
             }
         }

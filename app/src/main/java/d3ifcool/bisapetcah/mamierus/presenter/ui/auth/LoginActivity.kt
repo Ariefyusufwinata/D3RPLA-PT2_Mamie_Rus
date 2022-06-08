@@ -3,26 +3,52 @@ package d3ifcool.bisapetcah.mamierus.presenter.ui.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import d3ifcool.bisapetcah.mamierus.core.helper.INTERNAL_SERVER
-import d3ifcool.bisapetcah.mamierus.core.connection.Client
-import d3ifcool.bisapetcah.mamierus.core.model.auth.LoginResponses
-import d3ifcool.bisapetcah.mamierus.databinding.ActivityLoginBinding
+import androidx.lifecycle.ViewModelProvider
+import d3ifcool.bisapetcah.mamierus.core.datastore.PreferencesData
+import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
+import d3ifcool.bisapetcah.mamierus.databinding.ActivityAuthLoginBinding
 import d3ifcool.bisapetcah.mamierus.presenter.ui.konsumen.MainActivityK
 import d3ifcool.bisapetcah.mamierus.presenter.ui.pemilik.MainActivityP
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.auth.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityLoginBinding
+    private lateinit var binding : ActivityAuthLoginBinding
+    private lateinit var model : LoginViewModel
+    private lateinit var sharedPref : PreferencesData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityAuthLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedPref = PreferencesData(this@LoginActivity)
+
+        model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[LoginViewModel::class.java]
+        model.getValue().observe(this) {
+            val username = it.data?.user?.username.toString()
+            val role = it.data?.user?.role.toString()
+            val token = it.data?.accessToken.toString()
+            when (it != null) {
+                 true -> {
+
+                sharedPref.put(TemporaryObject.PREFS_STATUS, true)
+                sharedPref.put(TemporaryObject.PREFS_USERNAME, username)
+                sharedPref.put(TemporaryObject.PREFS_ROLE, role)
+                sharedPref.put(TemporaryObject.PREFS_TOKEN, token)
+
+                     Toast.makeText(this@LoginActivity, "Selamat Datang Pengguna!", Toast.LENGTH_SHORT).show()
+                     when(role) {
+                         "konsumen" -> startActivity(Intent(this@LoginActivity, MainActivityK::class.java))
+                         "pemilik" -> startActivity(Intent(this@LoginActivity, MainActivityP::class.java))
+                         else ->    Toast.makeText(this@LoginActivity, "Akun Tidak Ditemukan!", Toast.LENGTH_LONG).show()
+                     }
+                 }
+                false -> Toast.makeText(this@LoginActivity, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
+            }
+
+        }
 
         binding.apply {
             btnForget.setOnClickListener {
@@ -38,39 +64,8 @@ class LoginActivity : AppCompatActivity() {
             btnLogin.setOnClickListener {
                 val username = edtNamaPengguna.text.toString()
                 val password = edtKataSandi.text.toString()
-                login(username, password)
+                model.loginUser(username, password)
             }
         }
-    }
-
-    private fun login(username : String, password : String) {
-        Client.instance.login(
-            username,
-            password
-        ).enqueue(object : Callback<LoginResponses> {
-            override fun onResponse(
-                call: Call<LoginResponses>,
-                server: Response<LoginResponses>
-            ) {
-                if(server.isSuccessful) {
-                    Toast.makeText(this@LoginActivity, "Selamat Datang Pengguna!", Toast.LENGTH_SHORT).show()
-                    if("${server.body()?.data?.user?.role}" == "konsumen") {
-                        Intent(this@LoginActivity, MainActivityK::class.java).also {
-                            startActivity(it)
-                        }
-                    }
-                    if("${server.body()?.data?.user?.role}" == "pemilik") {
-                        Intent(this@LoginActivity, MainActivityP::class.java).also {
-                            startActivity(it)
-                        }
-                    }
-                } else {
-                    Toast.makeText(this@LoginActivity, "Akun Tidak Ditemukan!", Toast.LENGTH_LONG).show()
-                }
-            }
-            override fun onFailure(call: Call<LoginResponses>, t: Throwable) {
-                Log.e(INTERNAL_SERVER, t.message.toString())
-            }
-        })
     }
 }
