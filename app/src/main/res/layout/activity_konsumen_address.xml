@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presenter.ui.konsumen.AddressActivityK">
+    android:background="@color/background"
+    tools:context=".presenter.ui.costumer.AddressActivityK">
 
     <include
         android:id="@+id/extAddress"

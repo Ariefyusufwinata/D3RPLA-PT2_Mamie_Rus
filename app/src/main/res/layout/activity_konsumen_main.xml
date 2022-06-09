@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presenter.ui.konsumen.MainActivityK">
+    android:background="@color/background"
+    tools:context=".presenter.ui.costumer.MainActivityK">
 
     <EditText
         android:id="@+id/edtCari"
@@ -50,14 +51,14 @@
         app:layout_constraintTop_toBottomOf="@+id/edtCari"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/rv_food" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:visibility="invisible"
+        android:visibility="visible"
+        android:indeterminateTint="@color/main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

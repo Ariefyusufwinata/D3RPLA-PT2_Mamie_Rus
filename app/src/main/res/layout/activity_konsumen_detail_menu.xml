@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presenter.ui.konsumen.DetailMenuActivityK">
+    android:background="@color/background"
+    tools:context=".presenter.ui.costumer.DetailMenuActivityK">
 
     <ImageView
     android:id="@+id/imgPhoto"
@@ -36,11 +37,11 @@
         />
 
     <ToggleButton
-        android:id="@+id/btnFavorite"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:id="@+id/toggleFavorite"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/favorite_button"
         android:textOff=""
         android:textOn=""
@@ -55,6 +56,7 @@
         android:layout_height="wrap_content"
         android:text="@string/desc_detail"
         android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:justificationMode="inter_word"
@@ -62,58 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMenu"
         />
-
-    <EditText
-        android:id="@+id/edtComment"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/custumize_search"
-        android:drawableEnd="@drawable/ic_send"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="@string/tulis_komentar"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="12sp"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDeskripsi" />
-
-    <EditText
-        android:id="@+id/edtCari"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/custumize_search"
-        android:drawableEnd="@drawable/ic_camera"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="@string/upload_bukti"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="12sp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtComment" />
-
-    <RatingBar
-        style = "@style/Widget.AppCompat.RatingBar.Indicator"
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="1"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvRating"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvRating" />
 
     <Button
         android:id="@+id/button"
@@ -129,31 +79,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDeskripsi" />
 
-    <TextView
-        android:id="@+id/tvRating"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnUlasan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/berikan_rating"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/tambah_ulasan"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCari" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/tvLike"
+        android:id="@+id/tvSuka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/sukai"
         android:textColor="@color/black"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnFavorite"
-        app:layout_constraintStart_toEndOf="@+id/btnFavorite"
-        app:layout_constraintTop_toTopOf="@+id/btnFavorite" />
+        app:layout_constraintBottom_toBottomOf="@+id/toggleFavorite"
+        app:layout_constraintStart_toEndOf="@+id/toggleFavorite"
+        app:layout_constraintTop_toTopOf="@+id/toggleFavorite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

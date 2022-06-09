@@ -4,13 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presenter.ui.konsumen.CommentActivityK">
+    android:background="@color/background"
+    tools:context=".presenter.ui.costumer.CommentActivityK">
+
+    <TextView
+        android:id="@+id/tvMenu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/mie_ayam_original"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tvDeskripsi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDeskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/desc_detail"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:justificationMode="inter_word"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenu"
+        />
 
     <EditText
         android:id="@+id/edtComment"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/custumize_search"
@@ -24,27 +53,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edtCari"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/custumize_search"
-        android:drawableEnd="@drawable/ic_camera"
-        android:fontFamily="@font/poppins_medium"
-        android:hint="@string/upload_bukti"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="12sp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtComment" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDeskripsi" />
 
     <RatingBar
         style = "@style/Widget.AppCompat.RatingBar.Indicator"
@@ -59,14 +68,14 @@
         app:layout_constraintTop_toTopOf="@+id/tvRating" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/green"
         android:fontFamily="@font/poppins_bold"
-        android:text="@string/whatsapp"
+        android:text="@string/kirim"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,13 +87,13 @@
         android:id="@+id/tvRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/berikan_rating"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/berikan_rating"
+        android:textSize="12sp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toStartOf="@+id/ratingBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCari" />
+        app:layout_constraintTop_toBottomOf="@+id/edtComment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

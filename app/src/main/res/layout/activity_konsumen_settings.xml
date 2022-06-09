@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".presenter.ui.konsumen.SettingsActivityK">
+    android:background="@color/background"
+    tools:context=".presenter.ui.costumer.SettingsActivityK">
 
     <TextView
         android:id="@+id/tvName"
@@ -33,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <ImageView
-        android:id="@+id/imgProfile"
+        android:id="@+id/btnProfile"
         android:layout_width="50dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
@@ -60,20 +61,6 @@
         app:layout_constraintTop_toBottomOf="@+id/noPhone" />
 
     <Button
-        android:id="@+id/btnAddComment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/komentar"
-        android:textAllCaps="false"
-        android:textAlignment="viewStart"
-        android:backgroundTint="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_margin="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFavorite" />
-
-    <Button
         android:id="@+id/btnAboutApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +71,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddComment" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFavorite" />
 
     <Button
         android:id="@+id/btnLogout"
