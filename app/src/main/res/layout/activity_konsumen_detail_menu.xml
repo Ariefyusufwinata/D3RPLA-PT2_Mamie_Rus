@@ -36,20 +36,6 @@
         app:layout_constraintBottom_toTopOf="@id/tvDeskripsi"
         />
 
-    <ToggleButton
-        android:id="@+id/toggleFavorite"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/favorite_button"
-        android:textOff=""
-        android:textOn=""
-        app:layout_constraintBottom_toBottomOf="@+id/tvMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvMenu"
-        app:layout_constraintTop_toTopOf="@+id/tvMenu" />
-
     <TextView
         android:id="@+id/tvDeskripsi"
         android:layout_width="match_parent"
@@ -66,7 +52,7 @@
         />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnWhatsApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -88,25 +74,13 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/main"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/tambah_ulasan"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <TextView
-        android:id="@+id/tvSuka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/sukai"
-        android:textColor="@color/black"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toggleFavorite"
-        app:layout_constraintStart_toEndOf="@+id/toggleFavorite"
-        app:layout_constraintTop_toTopOf="@+id/toggleFavorite" />
+        app:layout_constraintTop_toBottomOf="@+id/btnWhatsApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

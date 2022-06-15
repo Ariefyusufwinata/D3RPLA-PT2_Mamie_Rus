@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/noPhone"
+        android:id="@+id/tvPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
@@ -41,7 +41,7 @@
         android:textColor="@color/grey_100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
 
     <EditText
         android:id="@+id/edtNamaPengguna"
@@ -49,7 +49,7 @@
         android:layout_height="40dp"
         android:background="@drawable/custumize_search"
         android:fontFamily="@font/poppins_medium"
-        android:hint="@string/rusyono"
+        android:hint="@string/masukkan_nama_pengguna"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
@@ -78,7 +78,7 @@
         android:background="@drawable/custumize_search"
         android:drawableEnd="@drawable/ic_edit"
         android:fontFamily="@font/poppins_medium"
-        android:hint="@string/phone_aminah"
+        android:hint="@string/masukkan_nomor_hp"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
