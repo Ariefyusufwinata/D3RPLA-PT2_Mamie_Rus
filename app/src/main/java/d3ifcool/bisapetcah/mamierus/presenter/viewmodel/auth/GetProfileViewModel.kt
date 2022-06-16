@@ -6,35 +6,36 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import d3ifcool.bisapetcah.mamierus.core.connection.Client
 import d3ifcool.bisapetcah.mamierus.core.helper.INTERNAL_SERVER
-import d3ifcool.bisapetcah.mamierus.core.model.auth.LoginResponses
+import d3ifcool.bisapetcah.mamierus.core.model.auth.GetProfileResponses
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginViewModel : ViewModel() {
+class GetProfileViewModel : ViewModel() {
 
-    private val data = MutableLiveData<LoginResponses>()
+    private val data = MutableLiveData<GetProfileResponses>()
 
-    fun getValue() : LiveData<LoginResponses> {
+    fun getValue() : LiveData<GetProfileResponses> {
         return data
     }
 
-    fun login(username : String, password : String) {
-        Client.instance.login(
-            username,
-            password
-        ).enqueue(object : Callback<LoginResponses> {
+    fun getProfile(token : String) {
+        Client.instance.getProfile(
+            token
+        ).enqueue(object : Callback<GetProfileResponses>{
             override fun onResponse(
-                call: Call<LoginResponses>,
-                response: Response<LoginResponses>
+                call: Call<GetProfileResponses>,
+                response: Response<GetProfileResponses>
             ) {
                 if(response.isSuccessful) {
                     data.postValue(response.body())
                 }
             }
-            override fun onFailure(call: Call<LoginResponses>, t: Throwable) {
+
+            override fun onFailure(call: Call<GetProfileResponses>, t: Throwable) {
                 Log.e(INTERNAL_SERVER, t.message.toString())
             }
+
         })
     }
 }

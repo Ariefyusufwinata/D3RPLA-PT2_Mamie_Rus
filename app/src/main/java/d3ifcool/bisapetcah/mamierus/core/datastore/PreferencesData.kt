@@ -3,7 +3,7 @@ package d3ifcool.bisapetcah.mamierus.core.datastore
 import android.content.Context
 import android.content.SharedPreferences
 
-class PreferencesData (mContext : Context) {
+class PreferencesData(mContext : Context) {
 
     private val PREFS_NAME = "session_login"
     private var sharedPrefs : SharedPreferences

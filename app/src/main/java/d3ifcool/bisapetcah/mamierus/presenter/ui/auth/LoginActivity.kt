@@ -3,13 +3,19 @@ package d3ifcool.bisapetcah.mamierus.presenter.ui.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
+import android.view.View
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import d3ifcool.bisapetcah.mamierus.core.datastore.PreferencesData
-import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
+import d3ifcool.bisapetcah.mamierus.core.helper.Constant
+import d3ifcool.bisapetcah.mamierus.core.helper.FAILURE_PUT
+import d3ifcool.bisapetcah.mamierus.core.helper.NOTIF
 import d3ifcool.bisapetcah.mamierus.databinding.ActivityAuthLoginBinding
-import d3ifcool.bisapetcah.mamierus.presenter.ui.konsumen.MainActivityK
-import d3ifcool.bisapetcah.mamierus.presenter.ui.pemilik.MainActivityP
+import d3ifcool.bisapetcah.mamierus.presenter.ui.costumer.MainActivityK
 import d3ifcool.bisapetcah.mamierus.presenter.viewmodel.auth.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -32,20 +38,19 @@ class LoginActivity : AppCompatActivity() {
             val token = it.data?.accessToken.toString()
             when (it != null) {
                  true -> {
+                sharedPref.put(Constant.PREFS_STATUS, true)
+                sharedPref.put(Constant.PREFS_USERNAME, username)
+                sharedPref.put(Constant.PREFS_ROLE, role)
+                sharedPref.put(Constant.PREFS_TOKEN, token)
 
-                sharedPref.put(TemporaryObject.PREFS_STATUS, true)
-                sharedPref.put(TemporaryObject.PREFS_USERNAME, username)
-                sharedPref.put(TemporaryObject.PREFS_ROLE, role)
-                sharedPref.put(TemporaryObject.PREFS_TOKEN, token)
-
-                     Toast.makeText(this@LoginActivity, "Selamat Datang Pengguna!", Toast.LENGTH_SHORT).show()
+                     alert("Selamat Datang Pengguna!")
                      when(role) {
                          "konsumen" -> startActivity(Intent(this@LoginActivity, MainActivityK::class.java))
-                         "pemilik" -> startActivity(Intent(this@LoginActivity, MainActivityP::class.java))
-                         else ->    Toast.makeText(this@LoginActivity, "Akun Tidak Ditemukan!", Toast.LENGTH_LONG).show()
+//                       "pemilik" -> startActivity(Intent(this@LoginActivity, MainActivityP::class.java))
+                         else ->  alert("Role Tidak Terdata!")
                      }
                  }
-                false -> Toast.makeText(this@LoginActivity, "Tidak Dapat Menampilkan!", Toast.LENGTH_LONG).show()
+                else -> Toast.makeText(this@LoginActivity, "Data Ada Tidak Ditemukan", Toast.LENGTH_LONG).show()
             }
 
         }
@@ -64,8 +69,33 @@ class LoginActivity : AppCompatActivity() {
             btnLogin.setOnClickListener {
                 val username = edtNamaPengguna.text.toString()
                 val password = edtKataSandi.text.toString()
-                model.loginUser(username, password)
+                when {
+                    username.isEmpty() -> {
+                        alert("Mohon masukkan nama pengguna!")
+                        edtNamaPengguna.requestFocus()
+                    }
+                    password.isEmpty() -> {
+                        alert("Mohon masukkan kata sandi!")
+                        edtKataSandi.requestFocus()
+                    }
+                    else -> {
+                        model.login(username, password)
+                    }
+                }
             }
         }
+    }
+
+    private fun alert (str : String) {
+        val snack : Snackbar = Snackbar.make(
+            binding.root,
+            str,
+            Snackbar.LENGTH_LONG
+        )
+        val view : View = snack.view
+        val params = view.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        view.layoutParams = params
+        snack.show()
     }
 }

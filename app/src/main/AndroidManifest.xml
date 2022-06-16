@@ -7,132 +7,82 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-feature android:name="android.hardware.screen.portrait" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon_app"
-        android:screenOrientation="portrait"
         android:supportsRtl="true"
+        android:screenOrientation="locked"
         android:theme="@style/Theme.MamieRus">
         <activity
-            android:name=".presenter.ui.konsumen.CommentActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.DetailMenuActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.FavoriteMenuActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.ProfileActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.SettingsActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.AddressActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.pemilik.AddressActivityP"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.konsumen.AboutAppActivityK"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.pemilik.AboutAppActivityP"
-            android:exported="false"
-            android:label="@string/about_app" />
-        <activity
-            android:name=".presenter.ui.pemilik.AddProfileActivityP"
+            android:name=".presenter.ui.costumer.CommentActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.pemilik.DetailMenuActivityP"
+            android:name=".presenter.ui.costumer.DetailMenuActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.pemilik.SettingsActivityP"
+            android:name=".presenter.ui.costumer.ProfileActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.pemilik.GetCommentActivityP"
-
+            android:name=".presenter.ui.costumer.SettingsActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.pemilik.AddMenuActivityP"
+            android:name=".presenter.ui.costumer.AddressActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.util.notify.SuccesAddNotificationActivity"
+            android:name=".presenter.ui.costumer.AboutAppActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".presenter.ui.auth.LoginActivity"
-
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false"
-            android:theme="@style/Theme.MamieRus.NoActionBar" />
+            android:theme="@style/Theme.WithoutActionBar" />
         <activity
-            android:name=".presenter.ui.publik.AddressActivity"
+            android:name=".presenter.ui.general.AddressActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.publik.DetailMenuActivity"
+            android:name=".presenter.ui.general.DetailMenuActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.pemilik.MainActivityP"
+            android:name=".presenter.ui.costumer.MainActivityK"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
-            android:name=".presenter.ui.konsumen.MainActivityK"
+            android:name=".presenter.ui.general.AboutAppActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presenter.ui.publik.AboutAppActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:exported="false" />
         <activity
             android:name=".presenter.ui.auth.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
             android:theme="@style/Theme.WithoutActionBar" />
         <activity
             android:name=".presenter.ui.auth.ForgetPasswordActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.WithoutActionBar"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".presenter.ui.auth.PortalScreenActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.WithoutActionBar"/>
         <activity
-            android:name=".presenter.ui.publik.MainActivity"
-            android:exported="false"
+            android:name=".presenter.ui.general.MainActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            android:exported="false"/>
         <activity
             android:name=".SplashScreen"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.WithoutActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

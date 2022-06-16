@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import d3ifcool.bisapetcah.mamierus.presenter.ui.publik.MainActivity
+import d3ifcool.bisapetcah.mamierus.presenter.ui.general.MainActivity
 import d3ifcool.bisapetcah.mamierus.R
-import d3ifcool.bisapetcah.mamierus.core.helper.TemporaryObject
+import d3ifcool.bisapetcah.mamierus.core.helper.Constant
 import d3ifcool.bisapetcah.mamierus.databinding.FragmentPublicBottomSheetBinding
 
 class BottomSheetFragmentPublic : BottomSheetDialogFragment() {
@@ -37,19 +37,19 @@ class BottomSheetFragmentPublic : BottomSheetDialogFragment() {
                 when (radioGroup.checkedRadioButtonId) {
                     R.id.cPalingSesuai -> {
                         Intent(requireActivity(), MainActivity::class.java).also {
-                            it.putExtra(TemporaryObject.EXTRA_MSG, "Paling Sesuai")
+                            it.putExtra(Constant.EXTRA_MSG, "Paling Sesuai")
                             startActivity(it)
                         }
                     }
                     R.id.cPalingMurah -> {
                         Intent(requireActivity(), MainActivity::class.java).also {
-                            it.putExtra(TemporaryObject.EXTRA_MSG, "Paling Murah")
+                            it.putExtra(Constant.EXTRA_MSG, "Paling Murah")
                             startActivity(it)
                         }
                     }
                     R.id.cPalingMahal -> {
                         Intent(requireActivity(), MainActivity::class.java).also {
-                            it.putExtra(TemporaryObject.EXTRA_MSG, "Paling Mahal")
+                            it.putExtra(Constant.EXTRA_MSG, "Paling Mahal")
                             startActivity(it)
                         }
                     }
@@ -57,7 +57,7 @@ class BottomSheetFragmentPublic : BottomSheetDialogFragment() {
                         Intent(requireActivity(), MainActivity::class.java).also {
                             startActivity(it)
                         }
-                        Toast.makeText(requireActivity(), "No Value", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireActivity(), "No Value", Toast.LENGTH_SHORT).show()
                     }
                 }
 

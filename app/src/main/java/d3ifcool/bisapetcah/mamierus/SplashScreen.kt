@@ -30,7 +30,6 @@ class SplashScreen : AppCompatActivity() {
             override fun run() {
                 try {
                     checkNetworkToNavigation()
-//                    startActivity(Intent(baseContext, MainActivity::class.java))
                 } catch (e: Exception) {
                     Log.i(SPLASHSCREEN, "Failed! ${e.localizedMessage}")
                 }

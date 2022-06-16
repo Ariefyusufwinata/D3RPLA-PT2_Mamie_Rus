@@ -1,13 +1,10 @@
 package d3ifcool.bisapetcah.mamierus.core.connection
 
-import d3ifcool.bisapetcah.mamierus.core.model.auth.LoginResponses
-import d3ifcool.bisapetcah.mamierus.core.model.auth.LogoutResponses
-import d3ifcool.bisapetcah.mamierus.core.model.auth.ResetPasswordResponses
-import d3ifcool.bisapetcah.mamierus.core.model.konsumen.KonsumenRegisterResponses
-import d3ifcool.bisapetcah.mamierus.core.model.pemilik.PemilikGetProfileResponses
-import d3ifcool.bisapetcah.mamierus.core.model.publik.*
-import retrofit2.Call
+import d3ifcool.bisapetcah.mamierus.core.model.auth.*
+import d3ifcool.bisapetcah.mamierus.core.model.costumer.*
+import d3ifcool.bisapetcah.mamierus.core.model.general.*
 import retrofit2.http.*
+import retrofit2.Call
 
 interface Api {
 
@@ -20,7 +17,7 @@ interface Api {
     )  : Call<LoginResponses>
 
     @FormUrlEncoded
-    @POST("register2")
+    @POST("register2") // Costumer
     fun register(
         @Field("username") username : String,
         @Field("password") password : String,
@@ -34,19 +31,35 @@ interface Api {
         @Field("new_password") newPasssword : String,
     )  : Call<ResetPasswordResponses>
 
-    @FormUrlEncoded
     @DELETE("logout")
-    @Headers("Auth")
     fun logout(
+        @Header("Authorization") token: String
     )  : Call<LogoutResponses>
 
     @GET("user")
-    @Headers("Bearer Token : {token}")
-    fun getPemilikProfile(
-        @Header("token") token: String
-    ) : Call<PemilikGetProfileResponses>
+    fun getProfile(
+        @Header("Authorization") token: String
+    ) : Call<GetProfileResponses>
 
-    //Publik
+    @FormUrlEncoded
+    @PUT("user")
+    fun updateProfile(
+        @Header("Authorization") token: String,
+        @Field("password") password : String,
+        @Field("phone") phone : String
+    )  : Call<UpdateProfileResponses>
+
+    //Costumer
+    @FormUrlEncoded
+    @POST("comment/create")
+    fun postComment(
+        @Header("Authorization") token: String,
+        @Field("product_id") productId : Int,
+        @Field("comment") comment : String,
+        @Field("rating") rating : Float
+    )  : Call<KonsumenKomentarResponses>
+
+    //Public
     @GET("public/product")
     fun getPublicProduct(
     ) : Call<PublicGetProductResponses>
