@@ -48,7 +48,7 @@ Where we found resource for development ?<br />
         style="max-width: 100%;"
         >
    <img 
-        height="440"
+        height="600"
         width="260" 
         src="/screenshoot/about_app.png" 
         style="max-width: 100%;"
