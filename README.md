@@ -12,8 +12,8 @@ Where we found resource for development ?<br />
 <h2>ScreenShoot Apps</h2>
 <div align="center">
   <img 
-    height="30"
-    width="40"
+    height="200"
+    width="300"
     src="/screenshoot/splash_screen.png" 
    />
 </div>
