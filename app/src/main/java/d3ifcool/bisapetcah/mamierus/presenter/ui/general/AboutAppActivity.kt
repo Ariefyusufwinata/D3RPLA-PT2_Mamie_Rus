@@ -1,4 +1,4 @@
-package d3ifcool.bisapetcah.mamierus.presenter.ui.publik
+package d3ifcool.bisapetcah.mamierus.presenter.ui.general
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -38,15 +38,9 @@ class AboutAppActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            1 -> Intent(this, LoginActivity::class.java).also {
-                startActivity(it)
-            }
-            2 -> Intent(this, AddressActivity::class.java).also {
-                startActivity(it)
-            }
-            3 -> Intent(this, AboutAppActivity::class.java).also {
-                startActivity(it)
-            }
+            1 -> startActivity(Intent(this, LoginActivity::class.java))
+            2 -> startActivity(Intent(this, AddressActivity::class.java))
+            3 -> startActivity(Intent(this, AboutAppActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
