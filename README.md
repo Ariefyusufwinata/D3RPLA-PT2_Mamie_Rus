@@ -10,48 +10,6 @@ Where we found resource for development ?<br />
 <a href="https://square.github.io/retrofit/" target="_RetrofitBuilder">Retrofit Connection</a>
 
 <h2>ScreenShoot Apps</h2>
-<h2>ScreenShoot Apps</h2>
-<div align="left">
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/splash_screen.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/portal_screen.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/login.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/home.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/detail_menu.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/alamat_warung.png" 
-        style="max-width: 100%;"
-        >
-   <img 
-        height="440"
-        width="260" 
-        src="/screenshoot/about_app.png" 
-        style="max-width: 100%;"
-        >
+<div align="center">
+  <img src="/screenshoot/splash_screen.png" />
 </div>
