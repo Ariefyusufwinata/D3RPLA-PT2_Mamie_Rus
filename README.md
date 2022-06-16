@@ -13,7 +13,7 @@ Where we found resource for development ?<br />
 <div align="left">
   <img 
     height="100"
-    width="300"
+    width="500"
     src="/screenshoot/splash_screen.png" 
    />
 </div>
