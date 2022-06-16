@@ -10,9 +10,9 @@ Where we found resource for development ?<br />
 <a href="https://square.github.io/retrofit/" target="_RetrofitBuilder">Retrofit Connection</a>
 
 <h2>ScreenShoot Apps</h2>
-<div align="center">
+<div align="left">
   <img 
-    height="200"
+    height="100"
     width="300"
     src="/screenshoot/splash_screen.png" 
    />
