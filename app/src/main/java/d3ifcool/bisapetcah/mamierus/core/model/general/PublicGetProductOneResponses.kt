@@ -1,14 +1,14 @@
-package d3ifcool.bisapetcah.mamierus.core.model.publik
+package d3ifcool.bisapetcah.mamierus.core.model.general
 
 import com.google.gson.annotations.SerializedName
 
-data class PublicGetProductResponses(
+data class PublicGetProductOneResponses(
 
 	@field:SerializedName("code")
 	val code: Int? = null,
 
 	@field:SerializedName("data")
-	val dataAllMenu: DataAllMenu? = null,
+	val data: Data? = null,
 
 	@field:SerializedName("message")
 	val message: String? = null,
@@ -17,22 +17,40 @@ data class PublicGetProductResponses(
 	val status: String? = null
 )
 
-data class LinksItem(
+data class ImagesItemOne(
 
-	@field:SerializedName("active")
-	val active: Boolean? = null,
+	@field:SerializedName("path")
+	val path: String? = null,
 
-	@field:SerializedName("label")
-	val label: String? = null,
+	@field:SerializedName("size")
+	val size: String? = null,
 
-	@field:SerializedName("url")
-	val url: Any? = null
+	@field:SerializedName("updated_at")
+	val updatedAt: String? = null,
+
+	@field:SerializedName("name")
+	val name: String? = null,
+
+	@field:SerializedName("created_at")
+	val createdAt: String? = null,
+
+	@field:SerializedName("id")
+	val id: Int? = null
 )
 
-data class DataItem(
+data class CategoriesItemOne(
+
+	@field:SerializedName("name")
+	val name: String? = null,
+
+	@field:SerializedName("id")
+	val id: Int? = null
+)
+
+data class Data(
 
 	@field:SerializedName("images")
-	val images: List<ImagesItem?>? = null,
+	val images: List<ImagesItemOne?>? = null,
 
 	@field:SerializedName("rating")
 	val rating: String? = null,
@@ -65,28 +83,40 @@ data class DataItem(
 	val id: Int? = null,
 
 	@field:SerializedName("categories")
-	val categories: List<CategoriesItem?>? = null,
+	val categories: List<CategoriesItemOne?>? = null,
 
 	@field:SerializedName("stock")
 	val stock: String? = null,
+
+	@field:SerializedName("user")
+	val user: UserOne? = null,
 
 	@field:SerializedName("is_empty")
 	val isEmpty: String? = null
 )
 
-data class ImagesItem(
+data class Profile(
 
-	@field:SerializedName("path")
-	val path: String? = null,
-
-	@field:SerializedName("size")
-	val size: String? = null,
+	@field:SerializedName("address")
+	val address: String? = null,
 
 	@field:SerializedName("updated_at")
 	val updatedAt: String? = null,
 
+	@field:SerializedName("phone")
+	val phone: String? = null,
+
+	@field:SerializedName("is_open")
+	val isOpen: String? = null,
+
 	@field:SerializedName("name")
 	val name: String? = null,
+
+	@field:SerializedName("map_url")
+	val mapUrl: String? = null,
+
+	@field:SerializedName("description")
+	val description: String? = null,
 
 	@field:SerializedName("created_at")
 	val createdAt: String? = null,
@@ -95,52 +125,22 @@ data class ImagesItem(
 	val id: Int? = null
 )
 
-data class DataAllMenu(
+data class UserOne(
 
-	@field:SerializedName("per_page")
-	val perPage: Int? = null,
+	@field:SerializedName("role")
+	val role: String? = null,
 
-	@field:SerializedName("data")
-	val dataItem: List<DataItem?>? = null,
+	@field:SerializedName("updated_at")
+	val updatedAt: String? = null,
 
-	@field:SerializedName("last_page")
-	val lastPage: Int? = null,
-
-	@field:SerializedName("next_page_url")
-	val nextPageUrl: Any? = null,
-
-	@field:SerializedName("prev_page_url")
-	val prevPageUrl: Any? = null,
-
-	@field:SerializedName("first_page_url")
-	val firstPageUrl: String? = null,
-
-	@field:SerializedName("path")
-	val path: String? = null,
-
-	@field:SerializedName("total")
-	val total: Int? = null,
-
-	@field:SerializedName("last_page_url")
-	val lastPageUrl: String? = null,
-
-	@field:SerializedName("from")
-	val from: Int? = null,
-
-	@field:SerializedName("links")
-	val links: List<LinksItem?>? = null,
-
-	@field:SerializedName("to")
-	val to: Int? = null,
-
-	@field:SerializedName("current_page")
-	val currentPage: Int? = null
-)
-
-data class CategoriesItem(
+	@field:SerializedName("profile")
+	val profile: Profile? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
+
+	@field:SerializedName("created_at")
+	val createdAt: String? = null,
 
 	@field:SerializedName("id")
 	val id: Int? = null
